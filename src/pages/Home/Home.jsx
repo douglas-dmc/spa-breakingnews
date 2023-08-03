@@ -1,6 +1,11 @@
+import Navbar from "../../components/Navbar/Navbar"
+
 function Home(){
     return (
-        <h1>Olá Mundo</h1>
+        <section>
+            <Navbar />
+            <h2>Olá Mundo</h2>
+        </section>
     )
 }
 
