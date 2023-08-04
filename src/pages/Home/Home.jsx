@@ -1,12 +1,14 @@
+import { Card } from "../../components/Cards/Card"
 import Navbar from "../../components/Navbar/Navbar"
+import { news } from "../../Datas"
 
-function Home(){
+export function Home() {
     return (
-        <section>
+        <>
             <Navbar />
-            <h2>Olá Mundo</h2>
-        </section>
+            {news.map((item, index) => {
+                return <Card key={index} props={item} />
+            })}
+        </>
     )
 }
-
-export default Home
