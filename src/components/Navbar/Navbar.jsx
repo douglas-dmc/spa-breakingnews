@@ -1,7 +1,7 @@
 import logo from "../../images/LogoBN.png"
 import { Button, ImageLogo, InputSpace, Nav } from "./NavbarStyled"
 
-function Navbar() {
+export function Navbar() {
     return (
         <>
             <Nav>
@@ -17,5 +17,3 @@ function Navbar() {
         </>
     )
 }
-
-export default Navbar

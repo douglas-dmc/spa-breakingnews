@@ -1,15 +1,12 @@
 // import './App.css'
-import { GlobalStyled } from './GlobalStyled'
-import Home from './pages/Home/Home'
+import { GlobalStyled } from "./GlobalStyled"
+import { Home } from "./pages/Home/Home"
 
-function App() {
-
-  return (
-    <>
-      <GlobalStyled />
-      <Home />
-    </>
-  )
+export function App() {
+    return (
+        <>
+            <GlobalStyled />
+            <Home />
+        </>
+    )
 }
-
-export default App
