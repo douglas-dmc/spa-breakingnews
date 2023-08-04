@@ -14,3 +14,6 @@ Currently, two official plugins are available:
 - `cd spa-breakingnews`
 - `npm install`
 - `npm run dev`
+
+## Instalação do styled-components
+- `npm i styled-components`
