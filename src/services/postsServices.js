@@ -2,9 +2,12 @@ import axios from "axios"
 
 const baseURL = "http://localhost:3000"
 
-export function getAllPosts() {
-    const response = axios.get(`${baseURL}/news`, {
-        headers: { "Access-Control-Allow-Credentials": "*" }
-    })
+export function getAllNews() {
+    const response = axios.get(`${baseURL}/news`)
+    return response
+}
+
+export function getTopNews() {
+    const response = axios.get(`${baseURL}/news/top`)
     return response
 }

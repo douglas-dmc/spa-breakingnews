@@ -6,5 +6,10 @@ export const HomeBody = styled.section`
     grid-gap: 10px;
     margin: 1rem auto;
     width: 80%;
-    
+`
+
+export const HomeHeader = styled.section`
+    display: flex;
+    margin: 1rem auto;
+    width: 80%;   
 `
