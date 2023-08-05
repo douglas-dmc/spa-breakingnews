@@ -1,6 +1,6 @@
 import { CardBody, CardContainer, CardFooter } from "./CardStyled"
 
-export function Card({ props }) {
+export function Card(props) {
     return (
         <CardContainer>
             <CardBody>
@@ -8,7 +8,7 @@ export function Card({ props }) {
                     <h2>{props.title}</h2>
                     <p>{props.text}</p>
                 </div>
-                <img src={props.image} alt="Imagem" />
+                <img src={props.banner} alt="Imagem" />
             </CardBody>
             <CardFooter>
                 <div>

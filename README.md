@@ -17,3 +17,9 @@ Currently, two official plugins are available:
 
 ## Instalação do styled-components
 - `npm i styled-components`
+
+## Instalação da biblioteca axios para consumir a API
+- `npm i axios`
+
+## Instalação do pacote cors para autorização de requisições de outras origens
+- `npm i cors`
