@@ -8,7 +8,7 @@ export function Card(props) {
                 <div>
                     <CardHeader top={props.top}>
                         <h2>{props.title}</h2>
-                        <TextLimit text={props.text} limit={150} />
+                        <TextLimit text={props.text} limit={120} />
                     </CardHeader>
 
                     <CardFooter>

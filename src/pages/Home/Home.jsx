@@ -1,36 +1,38 @@
 import { Card } from "../../components/Cards/Card"
 import { Navbar } from "../../components/Navbar/Navbar"
-import { getAllNews, getTopNews } from "../../services/postsServices"
+import { getAllNews, getTopNew } from "../../services/postsServices"
 import { HomeBody, HomeHeader } from "./HomeStyled"
 import { useEffect, useState } from "react"
 
 export function Home() {
     const [news, setNews] = useState([])
-    const [topNews, setTopNews] = useState({})
+    const [topNew, setTopNew] = useState({})
 
     async function findNews() {
         const newsResponse = await getAllNews()
         setNews(newsResponse.data.results)
 
-        const topNewsResponse = await getTopNews()
-        setTopNews(topNewsResponse.data.news)
+        const topNewsResponse = await getTopNew()
+        setTopNew(topNewsResponse.data.news)
     }
 
     useEffect(() => {
         findNews()
     }, [])
 
+    // Remove do array a primeira notícia em destaque 
+    delete news[0]
+
     return (
         <>
-            <Navbar />
             <HomeHeader>
                 <Card
                     top={true}
-                    title={topNews.title}
-                    text={topNews.text}
-                    banner={topNews.banner}
-                    likes={topNews.likes}
-                    comments={topNews.comments}
+                    title={topNew.title}
+                    text={topNew.text}
+                    banner={topNew.banner}
+                    likes={topNew.likes}
+                    comments={topNew.comments}
                 />
             </HomeHeader>
             <HomeBody>

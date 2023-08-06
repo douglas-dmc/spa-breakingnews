@@ -23,3 +23,6 @@ Currently, two official plugins are available:
 
 ## Instalação do pacote cors para autorização de requisições de outras origens
 - `npm i cors`
+
+## Instalaçaõ do react-router-dom para criar e configurar as rotas
+- `npm install react-router-dom localforage match-sorter sort-by`
