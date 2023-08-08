@@ -29,3 +29,6 @@ Currently, two official plugins are available:
 
 ## Instalação do React Hook Form para a implementação de formulários
 - `npm install react-hook-form`
+
+## Instalação do schema de validação para formulários
+-  `npm install @hookform/resolvers zod`
