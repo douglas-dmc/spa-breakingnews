@@ -26,3 +26,6 @@ Currently, two official plugins are available:
 
 ## Instalaçaõ do react-router-dom para criar e configurar as rotas
 - `npm install react-router-dom localforage match-sorter sort-by`
+
+## Instalação do React Hook Form para a implementação de formulários
+- `npm install react-hook-form`
