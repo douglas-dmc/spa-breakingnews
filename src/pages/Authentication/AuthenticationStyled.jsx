@@ -12,7 +12,8 @@ export const AuthContainer = styled.div`
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        width: 100%;
+        width: auto;
+        padding: 1rem;
     }
 `
 
