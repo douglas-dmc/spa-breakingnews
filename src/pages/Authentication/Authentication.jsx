@@ -3,31 +3,28 @@ import { Button } from "../../components/Button/Button"
 import { Input } from "../../components/Input/Input"
 import { AuthContainer, Section } from "./AuthenticationStyled"
 import { useForm } from "react-hook-form"
+import { signinSchema } from "../../schemas/signinSchema"
+import { ErrorSpan } from "../../components/Navbar/NavbarStyled"
+import { signupSchema } from "../../schemas/signupSchema"
 
 export function Authentication() {
     const {
         register: registerSignup,
         handleSubmit: handleSubmitSignup,
-        reset: resetSignup,
         formState: { errors: errorsSignup },
-    } = useForm(
-        // resolver: zodResolver(SignupSchema),
-    )
+    } = useForm({ resolver: zodResolver(signupSchema) })
 
     const {
         register: registerSignin,
         handleSubmit: handleSubmitSignin,
-        reset: resetSignin,
         formState: { errors: errorsSignin },
-    } = useForm(
-        // resolver: zodResolver(SigninSchema),
-    )
+    } = useForm({ resolver: zodResolver(signinSchema) })
 
-    function inHandleSubmit(data){
+    function inHandleSubmit(data) {
         console.log(data)
     }
 
-    function upHandleSubmit(data){
+    function upHandleSubmit(data) {
         console.log(data)
     }
 
@@ -42,12 +39,18 @@ export function Authentication() {
                         name="email"
                         register={registerSignin}
                     />
+                    {errorsSignin.email && (
+                        <ErrorSpan>{errorsSignin.email.message}</ErrorSpan>
+                    )}
                     <Input
                         type="password"
                         placeholder="Senha"
                         name="password"
                         register={registerSignin}
                     />
+                    {errorsSignin.password && (
+                        <ErrorSpan>{errorsSignin.password.message}</ErrorSpan>
+                    )}
                     <Button type="submit" text="Entrar" />
                 </form>
             </Section>
@@ -60,24 +63,36 @@ export function Authentication() {
                         name="name"
                         register={registerSignup}
                     />
+                    {errorsSignup.name && (
+                        <ErrorSpan>{errorsSignup.name.message}</ErrorSpan>
+                    )}
                     <Input
                         type="email"
                         placeholder="E-mail"
                         name="email"
                         register={registerSignup}
                     />
+                    {errorsSignup.email && (
+                        <ErrorSpan>{errorsSignup.email.message}</ErrorSpan>
+                    )}
                     <Input
                         type="password"
                         placeholder="Senha"
                         name="password"
                         register={registerSignup}
                     />
+                    {errorsSignup.password && (
+                        <ErrorSpan>{errorsSignup.password.message}</ErrorSpan>
+                    )}
                     <Input
                         type="password"
                         placeholder="Confirmar senha"
                         name="confirmPassword"
                         register={registerSignup}
                     />
+                    {errorsSignup.confirmPassword && (
+                        <ErrorSpan>{errorsSignup.confirmPassword.message}</ErrorSpan>
+                    )}
                     <Button type="submit" text="Cadastrar" />
                 </form>
             </Section>

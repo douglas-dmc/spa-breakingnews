@@ -57,13 +57,12 @@ export const InputSpace = styled.div`
     }
 `
 
-
 export const ErrorSpan = styled.span`
     background-color: #ffaeae;
-    color: #9e0000;
-    padding: 1rem;
+    color: #a15858;
+    padding: 0.5rem;
     display: flex;
     justify-content: center;
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 5px;
 `
