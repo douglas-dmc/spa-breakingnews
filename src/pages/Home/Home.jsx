@@ -22,7 +22,7 @@ export function Home() {
 
     // Remove do array a primeira notícia em destaque 
     delete news[0]
-
+console.log(news)
     return (
         <>
             <HomeHeader>
