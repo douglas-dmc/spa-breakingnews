@@ -32,3 +32,6 @@ Currently, two official plugins are available:
 
 ## Instalação do schema de validação para formulários
 -  `npm install @hookform/resolvers zod`
+
+## Instalação do pacote js-cookie
+- `npm i js-cookie`
