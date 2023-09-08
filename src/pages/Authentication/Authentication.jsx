@@ -6,8 +6,8 @@ import { useForm } from "react-hook-form"
 import { signinSchema } from "../../schemas/signinSchema"
 import { ErrorSpan } from "../../components/Navbar/NavbarStyled"
 import { signupSchema } from "../../schemas/signupSchema"
-import { signup } from "../../services/userServices"
-import Cookies from 'js-cookie'
+import { signin, signup } from "../../services/userServices"
+import Cookies from "js-cookie"
 import { useNavigate } from "react-router-dom"
 
 export function Authentication() {
@@ -23,17 +23,24 @@ export function Authentication() {
         formState: { errors: errorsSignin },
     } = useForm({ resolver: zodResolver(signinSchema) })
 
-    function inHandleSubmit(data) {
-        console.log(data)
-    }
 
     const navigate = useNavigate()
+
+    async function inHandleSubmit(data) {
+        try {
+            const response = await signin(data)
+            Cookies.set("token", response.data, { expires: 1 })
+            navigate("/")
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     async function upHandleSubmit(data) {
         try {
             const response = await signup(data)
-            Cookies.set("token", response.data.token, {expires: 1})
-            navigate('/')
+            Cookies.set("token", response.data.token, { expires: 1 })
+            navigate("/")
         } catch (error) {
             console.log(error)
         }
@@ -102,7 +109,9 @@ export function Authentication() {
                         register={registerSignup}
                     />
                     {errorsSignup.confirmPassword && (
-                        <ErrorSpan>{errorsSignup.confirmPassword.message}</ErrorSpan>
+                        <ErrorSpan>
+                            {errorsSignup.confirmPassword.message}
+                        </ErrorSpan>
                     )}
                     <Button type="submit" text="Cadastrar" />
                 </form>

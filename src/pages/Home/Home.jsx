@@ -1,5 +1,4 @@
 import { Card } from "../../components/Cards/Card"
-import { Navbar } from "../../components/Navbar/Navbar"
 import { getAllNews, getTopNew } from "../../services/postsServices"
 import { HomeBody, HomeHeader } from "./HomeStyled"
 import { useEffect, useState } from "react"
@@ -20,9 +19,9 @@ export function Home() {
         findNews()
     }, [])
 
-    // Remove do array a primeira notícia em destaque 
+    // Remove do array a primeira notícia em destaque
     delete news[0]
-console.log(news)
+
     return (
         <>
             <HomeHeader>
